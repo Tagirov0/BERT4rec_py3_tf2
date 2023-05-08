@@ -1,5 +1,5 @@
 CKPT_DIR="/tmp/BERT4rec"
-dataset_name="ml-1m"
+dataset_name="kion"
 preds='bert4rec_kion_preds.txt'
 max_seq_length=50
 masked_lm_prob=0.4
