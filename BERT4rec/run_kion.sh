@@ -1,6 +1,6 @@
 CKPT_DIR="/tmp/BERT4rec"
 dataset_name="ml-1m"
-preds='preds.txt'
+preds='bert4rec_kion_preds.txt'
 max_seq_length=50
 masked_lm_prob=0.4
 max_predictions_per_seq=20
