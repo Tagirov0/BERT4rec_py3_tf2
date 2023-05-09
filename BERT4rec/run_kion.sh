@@ -1,4 +1,3 @@
-CKPT_DIR="/tmp/BERT4rec"
 dataset_name="kion"
 preds='bert4rec_kion_preds.txt'
 max_seq_length=50
@@ -34,7 +33,7 @@ CUDA_VISIBLE_DEVICES=0 python -u run.py \
     --test_input_file=./data/${dataset_name}${signature}.test.tfrecord \
     --vocab_filename=./data/${dataset_name}${signature}.vocab \
     --user_history_filename=./data/${dataset_name}${signature}.his \
-    --checkpointDir=${CKPT_DIR}/${dataset_name} \
+    --checkpointDir=./bert_train/${dataset_name} \
     --signature=${signature}-${dim} \
     --do_train=True \
     --do_eval=True \
