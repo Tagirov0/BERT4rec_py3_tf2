@@ -188,18 +188,16 @@ class EvalHooks(tf.estimator.SessionRunHook):
 
         if (FLAGS.save_predictions_file is not None):
             for idx in range(len(input_ids)):
-                user_id = f"user_{info[idx][0]}"
+                user_id = info[idx][0]
                 scores = masked_lm_log_probs[idx, 0]
                 predicted_items = np.argsort(scores)[-FLAGS.predictions_per_user:][::-1]
-                output_file.write(user_id)
                 for item_id in predicted_items:
                     try:
                         token = self.vocab.convert_ids_to_tokens([item_id])[0]
                         score = scores[item_id]
-                        output_file.write(f";{token}:{score}")
+                        output_file.write(f'{user_id} {token}\n')
                     except IndexError:
                         continue
-                output_file.write("\n")
 
 
         for idx in range(len(input_ids)):
