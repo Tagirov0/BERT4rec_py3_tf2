@@ -1,10 +1,10 @@
 dataset_name="kion"
 preds='bert4rec_kion_preds.txt'
-max_seq_length=50
+max_seq_length=200
 masked_lm_prob=0.4
 max_predictions_per_seq=20
 
-dim=128
+dim=256
 batch_size=256
 num_train_steps=400000
 
